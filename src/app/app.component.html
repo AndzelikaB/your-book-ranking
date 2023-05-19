@@ -1,1 +1,7 @@
+<header *ngIf="userLogged">
+  <app-navbar></app-navbar>
+</header>
 <router-outlet></router-outlet>
+<footer *ngIf="userLogged">
+  <app-footer></app-footer>
+</footer>

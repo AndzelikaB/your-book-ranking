@@ -1,6 +1,6 @@
 @import "variables";
-@import "buttons";
 @import "forms";
+@import "buttons";
 
 body {
   font-family: "Arial", sans-serif;
@@ -17,3 +17,17 @@ h5,
 h6 {
   margin: 0;
 }
+
+h1 {
+  font-size: 2.7rem;
+  font-family: "Diplomata", cursive;
+  margin-bottom: 30px;
+}
+p {
+  line-height: 1.7;
+  font-size: 1.2rem;
+  font-family: "Eagle Lake", cursive;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
