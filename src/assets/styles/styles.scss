@@ -21,7 +21,6 @@ h6 {
 h1 {
   font-size: 2.7rem;
   font-family: "Diplomata", cursive;
-  margin-bottom: 30px;
 }
 p {
   line-height: 1.7;
@@ -29,5 +28,31 @@ p {
   font-family: "Eagle Lake", cursive;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+//menu
+.menu {
+  list-style-type: none;
+  padding: 0;
+
+  &-item {
+    cursor: pointer;
+    &--link {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

@@ -16,6 +16,7 @@ import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
+import { AuthService } from './services/auth-service.service';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent],
@@ -30,7 +31,7 @@ import {
     MatButtonModule,
     ReactiveFormsModule,
   ],
-  providers: [ErrorStateMatcher, ShowOnDirtyErrorStateMatcher],
+  providers: [ErrorStateMatcher, ShowOnDirtyErrorStateMatcher, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
