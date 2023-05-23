@@ -5,6 +5,4 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
   userIsLogged = false;
-  userNameC: string = '11111';
-  passwordC: string = '1';
 }

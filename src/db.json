@@ -1,0 +1,26 @@
+{
+  "signupUsersList": [
+    {
+      "username": "Andżelika",
+      "password": "zaq1"
+    },
+    {
+      "username": "Cody",
+      "password": "leon"
+    },
+    {
+      "username": "Test",
+      "password": "test"
+    },
+    {
+      "username": "Admin",
+      "password": "admin"
+    },
+    {
+      "username": "11111",
+      "password": "1"
+    }
+  ]
+}
+
+

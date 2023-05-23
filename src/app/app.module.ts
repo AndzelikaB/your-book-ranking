@@ -17,6 +17,7 @@ import {
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
 import { AuthService } from './services/auth-service.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent],
@@ -30,8 +31,14 @@ import { AuthService } from './services/auth-service.service';
     MatInputModule,
     MatButtonModule,
     ReactiveFormsModule,
+    HttpClientModule,
   ],
-  providers: [ErrorStateMatcher, ShowOnDirtyErrorStateMatcher, AuthService],
+  providers: [
+    ErrorStateMatcher,
+    ShowOnDirtyErrorStateMatcher,
+    AuthService,
+    HttpClient,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
