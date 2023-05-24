@@ -33,6 +33,12 @@
     justify-content: space-evenly;
     width: 65%;
     margin: 0% 7%;
+    align-items: flex-end;
+
+    .registration {
+      width: 500px;
+      align-items: center;
+    }
 
     &-inner-heading {
       margin-bottom: 30px;
@@ -43,5 +49,21 @@
       justify-content: flex-end;
       width: 100%;
     }
+  }
+}
+
+::ng-deep {
+  .mat-mdc-tab .mdc-tab__text-label {
+    line-height: 1.7;
+    font-size: 1.2rem;
+    font-family: "Eagle Lake", cursive;
+  }
+  .mat-mdc-tab-header {
+    margin-bottom: 30px;
+    width: 100%;
+  }
+  .mdc-tab-indicator--active {
+    background: $primary-color;
+    border-radius: 15px;
   }
 }

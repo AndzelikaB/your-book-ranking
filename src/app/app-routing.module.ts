@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './services/auth-guard.guard';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { InitialPageComponent } from './components/initial-page/initial-page.component';
 
 const routes: Routes = [
   {
@@ -12,7 +12,7 @@ const routes: Routes = [
     canActivate: [AuthGuard],
   },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: InitialPageComponent },
   { path: '404', component: NotFoundComponent },
   { path: '**', redirectTo: '/404' },
 ];
