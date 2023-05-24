@@ -1,9 +1,9 @@
 <form class="form login" (ngSubmit)="loginIn(username, password)">
   <mat-hint class="form-wrong-data" *ngIf="wrongData"> Wrong data! </mat-hint>
   <mat-form-field class="form-field">
-    <mat-label class="form-field-label">User Name</mat-label>
-    <input class="form-field-username" type="text" matInput [formControl]="username" [errorStateMatcher]="matcher"
-      placeholder="John doe">
+    <mat-label class="form-field-label">User Name / E-mail</mat-label>
+    <input class="form-field-input form-field-username" type="text" matInput [formControl]="username"
+      [errorStateMatcher]="matcher" placeholder="John doe">
     <mat-error class="form-field-notification" *ngIf="username.hasError('minlength') && !username.hasError('required')">
       Minimum length <strong> 5 </strong>
     </mat-error>
@@ -14,7 +14,8 @@
 
   <mat-form-field class="form-field">
     <mat-label>Password</mat-label>
-    <input class="form-field-password" type="password" matInput [formControl]="password" [errorStateMatcher]="matcher">
+    <input class="form-field-input form-field-password" type="password" matInput [formControl]="password"
+      [errorStateMatcher]="matcher">
     <mat-error class="form-field-notification" *ngIf="password.hasError('required')">
       Password is <strong>required</strong>
     </mat-error>

@@ -11,12 +11,16 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(name: any, pass: any): void {
+  login(name: string, pass: string): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const user: boolean = res.find((db: any) => {
-          return db.username === name && db.password === pass;
+          return (
+            (db.username === name || db.email === name) && db.password === pass
+          );
         });
+
+        console.log(user);
         if (user) {
           this.userIsLogged = true;
           this.router.navigate(['home']);
@@ -29,4 +33,27 @@ export class AuthService {
       },
     });
   }
+
+  createUser(name: any, email: any, pass: any) {
+    console.log(name);
+
+    const userData: AuthData = {
+      username: name,
+      email: email,
+      password: pass,
+    };
+
+    this.http
+      .post('http://localhost:3000/signupUsersList', userData)
+      .subscribe((response) => {
+        alert('SIGNIN SUCCESFUL');
+        console.log(response);
+      });
+  }
+}
+
+interface AuthData {
+  username: string;
+  email: string;
+  password: string;
 }

@@ -2,15 +2,18 @@
   "signupUsersList": [
     {
       "username": "Andżelika",
-      "password": "zaq1"
+      "password": "zaq1",
+      "email": "andzelika@gmail.com"
     },
     {
       "username": "Cody",
-      "password": "leon"
+      "password": "leon",
+      "email": "11111"
     },
     {
       "username": "Test",
-      "password": "test"
+      "password": "1",
+      "email": "1111"
     },
     {
       "username": "Admin",
@@ -22,5 +25,7 @@
     }
   ]
 }
+
+
 
 

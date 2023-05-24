@@ -1,1 +1,10 @@
 @import "src/styles/styles.scss";
+
+.member {
+  text-align: center;
+  margin-top: 0;
+
+  &-login {
+    color: #fff;
+  }
+}

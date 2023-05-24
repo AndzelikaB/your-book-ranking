@@ -21,23 +21,22 @@ export class SignupComponent {
   ]);
 
   password = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+
   matcher = new MyErrorStateMatcher();
 
   constructor(private router: Router, private authService: AuthService) {}
-
-  get wrongData(): boolean {
-    return this.authService.wrongData;
-  }
 
   ngOnInit() {
     this.authService.userIsLogged = false;
   }
 
-  loginIn(user: any, pass: any): void {
+  signUp(user: any, email: any, pass: any): void {
+    email = this.email.value;
     user = this.username.value;
     pass = this.password.value;
 
-    this.authService.login(user, pass);
+    this.authService.createUser(user, email, pass);
   }
 }
 

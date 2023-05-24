@@ -12,20 +12,26 @@
       background: gray;
       cursor: not-allowed;
     }
+
+    .form-field-notification {
+      color: #d43333;
+    }
   }
 
   &.signup {
     background: $primary-color;
     color: #fff;
+    padding: 20px 50px;
+    text-align: center;
 
     .mat-mdc-raised-button[disabled] {
-      background: rgb(192, 192, 192);
+      background: rgb(232, 186, 186);
       cursor: not-allowed;
+      color: gray;
     }
 
     ::placeholder,
-    .form-field-username,
-    .form-field-password {
+    .form-field-input {
       color: #fff;
     }
   }
@@ -33,7 +39,7 @@
   &-wrong-data {
     text-align: center;
     display: block;
-    color: #fc0c05;
+    color: $primary-color;
   }
 
   &-field {
@@ -41,7 +47,6 @@
     width: 100%;
 
     &-notification {
-      color: #d43333;
       font-size: 0.8rem;
     }
 
