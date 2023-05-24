@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  userIsLogged = false;
-  public wrongData: boolean = false;
+  userIsLogged: boolean = false;
+  wrongData: boolean = false;
 
-  constructor(public router: Router, private http: HttpClient) {}
+  constructor(private router: Router, private http: HttpClient) {}
 
-  login(name: any, pass: any) {
+  login(name: any, pass: any): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const user: boolean = res.find((db: any) => {

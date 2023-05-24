@@ -1,7 +1,7 @@
-<header *ngIf="authService.userIsLogged">
+<header *ngIf="isUserLogged">
   <app-navbar></app-navbar>
 </header>
 <router-outlet></router-outlet>
-<footer *ngIf="authService.userIsLogged">
+<footer *ngIf="isUserLogged">
   <app-footer></app-footer>
 </footer>

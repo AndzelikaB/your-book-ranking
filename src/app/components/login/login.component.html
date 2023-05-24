@@ -17,7 +17,7 @@
 
     <div class="content-form">
       <form class="form" (ngSubmit)="loginIn(username, password)">
-        <mat-hint class="form-wrong-data" *ngIf="authService.wrongData"> Wrong data! </mat-hint>
+        <mat-hint class="form-wrong-data" *ngIf="wrongData"> Wrong data! </mat-hint>
         <mat-form-field class="form-field">
           <mat-label class="form-field-label">User Name</mat-label>
           <input class="form-field-username" type="text" matInput [formControl]="username" [errorStateMatcher]="matcher"

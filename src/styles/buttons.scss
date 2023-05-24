@@ -10,4 +10,13 @@
       box-shadow: 2px 4px 5px 0px #fc0c05;
     }
   }
+
+  &.dark {
+    background: #464646;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: #464646;
+    }
+  }
 }
