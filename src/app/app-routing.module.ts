@@ -8,8 +8,8 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
-    canActivate: [AuthGuard],
+    redirectTo: '/home',
+    pathMatch: 'full',
   },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },

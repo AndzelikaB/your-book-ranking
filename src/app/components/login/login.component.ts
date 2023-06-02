@@ -29,15 +29,11 @@ export class LoginComponent {
     return this.authService.wrongData;
   }
 
-  ngOnInit() {
-    this.authService.userIsLogged = false;
-  }
-
   loginIn(user: any, pass: any): void {
     user = this.username.value;
     pass = this.password.value;
 
-    this.authService.login(user, pass);
+    this.authService.userLogin(user, pass);
   }
 }
 

@@ -6,20 +6,21 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  userIsLogged: boolean = false;
+  data: any = localStorage.getItem('userIsLogged');
+  userIsLogged: boolean = JSON.parse(this.data);
   wrongData: boolean = false;
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(name: any, pass: any): void {
+  userLogin(name: any, pass: any): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const user: boolean = res.find((db: any) => {
           return db.username === name && db.password === pass;
         });
         if (user) {
-          this.userIsLogged = true;
-          this.router.navigate(['home']);
+          localStorage.setItem('userIsLogged', JSON.stringify(true));
+          this.router.navigate(['/home']);
         } else {
           this.wrongData = true;
         }
@@ -28,5 +29,10 @@ export class AuthService {
         alert('Something went wrong: ' + e);
       },
     });
+  }
+
+  userLogout(): void {
+    localStorage.setItem('userIsLogged', JSON.stringify(false));
+    this.router.navigate(['/login']);
   }
 }
