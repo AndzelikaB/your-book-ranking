@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   userIsLogged: boolean = false;
   wrongData: boolean = false;
+  signSuccess: boolean = false;
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -35,24 +36,26 @@ export class AuthService {
   }
 
   createUser(name: any, email: any, pass: any) {
-    console.log(name);
-
     const userData: AuthData = {
+      id: '',
       username: name,
       email: email,
       password: pass,
     };
 
-    this.http
-      .post('http://localhost:3000/signupUsersList', userData)
-      .subscribe((response) => {
-        alert('SIGNIN SUCCESFUL');
-        console.log(response);
-      });
+    this.http.post('http://localhost:3000/signupUsersList', userData).subscribe(
+      (resp) => {
+        this.signSuccess = true;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
   }
 }
 
 interface AuthData {
+  id: string;
   username: string;
   email: string;
   password: string;

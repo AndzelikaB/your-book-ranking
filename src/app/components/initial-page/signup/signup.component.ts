@@ -22,7 +22,6 @@ export class SignupComponent {
 
   password = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required, Validators.email]);
-
   matcher = new MyErrorStateMatcher();
 
   constructor(private router: Router, private authService: AuthService) {}
@@ -37,6 +36,14 @@ export class SignupComponent {
     pass = this.password.value;
 
     this.authService.createUser(user, email, pass);
+
+    this.username.reset();
+    this.email.reset();
+    this.password.reset();
+  }
+
+  get signSuccess(): boolean {
+    return this.authService.signSuccess;
   }
 }
 

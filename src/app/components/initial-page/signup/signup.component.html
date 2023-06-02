@@ -1,4 +1,5 @@
 <form class="form signup" (ngSubmit)="signUp(username, email, password)">
+  <mat-hint class="form-signup-success" *ngIf="signSuccess"> Sign up successfully! </mat-hint>
   <mat-form-field class="form-field">
     <mat-label class="form-field-label">User Name</mat-label>
     <input class="form-field-input form-field-username" type="text" matInput [formControl]="username"
