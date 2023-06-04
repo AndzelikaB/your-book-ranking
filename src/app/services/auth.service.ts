@@ -6,9 +6,13 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  data: any = localStorage.getItem('userIsLogged');
-  userIsLogged: boolean = JSON.parse(this.data);
   wrongData: boolean = false;
+
+  get userIsLogged(): boolean {
+    const data: any = localStorage.getItem('userIsLogged');
+    const userIsLogged: boolean = JSON.parse(data);
+    return data ? userIsLogged : false;
+  }
 
   constructor(private router: Router, private http: HttpClient) {}
 
@@ -20,6 +24,7 @@ export class AuthService {
         });
         if (user) {
           localStorage.setItem('userIsLogged', JSON.stringify(true));
+
           this.router.navigate(['/home']);
         } else {
           this.wrongData = true;
