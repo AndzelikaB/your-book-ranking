@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   FormControl,
@@ -24,6 +24,8 @@ export class SignupComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
   matcher = new MyErrorStateMatcher();
 
+  @ViewChild('signupNgForm') signupNgForm!: NgForm;
+
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
@@ -40,6 +42,7 @@ export class SignupComponent {
     this.username.reset();
     this.email.reset();
     this.password.reset();
+    this.signupNgForm.resetForm();
   }
 
   get signSuccess(): boolean {
