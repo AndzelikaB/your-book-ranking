@@ -1,0 +1,39 @@
+.form {
+  width: 300px;
+  padding: 40px 50px;
+  background: #ffffff;
+  border-radius: 15px;
+  color: #333;
+  text-align: right;
+
+  &-wrong-data {
+    text-align: center;
+    display: block;
+    color: #fc0c05;
+  }
+
+  &-field {
+    margin: 10px 0;
+    width: 100%;
+
+    &-notification {
+      color: #d43333;
+      font-size: 0.8rem;
+    }
+
+    .mat-mdc {
+      &-input-element {
+        padding-bottom: 5px;
+      }
+
+      &-form-field-infix {
+        padding-top: 15px;
+      }
+    }
+  }
+
+  .mat-mdc-raised-button[disabled] {
+    background: gray;
+    cursor: not-allowed;
+  }
+}

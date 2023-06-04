@@ -1,0 +1,48 @@
+<div class="containter">
+  <div class="content">
+    <div class="content-inner">
+      <h1 class="content-inner-heading"> Movies Ranking </h1>
+      <div class="content-inner-description">
+        <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dolor ad repellat distinctio excepturi
+          minima nam doloribus sequi illo iusto! Earum saepe reiciendis voluptatem quidem ipsa modi vero eveniet vitae,
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam atque odio, officia facere quos, quidem
+          aliquam explicabo iure est neque ad! Amet eveniet modi sint, molestias dolor vero sed consectetur. Lorem ipsum
+          dolor sit, amet consectetur adipisicing elit. Harum asperiores deserunt voluptatibus iusto recusandae eius est
+          ipsum quos officiis ab fuga tenetur dolorum, ipsam enim fugit odio quidem excepturi ullam vitae possimus.
+          Aliquid quam tempore mollitia. Quae tempora, placeat ducimus dolor, ipsum fuga velit commodi cupiditate sed,
+          aut
+          explicabo repudiandae?</p>
+      </div>
+    </div>
+
+    <div class="content-form">
+      <form class="form" (ngSubmit)="loginIn()">
+        <mat-hint class="form-wrong-data" *ngIf="wrongData"> Wrong data! </mat-hint>
+        <mat-form-field class="form-field">
+          <mat-label class="form-field-label">User Name</mat-label>
+          <input class="form-field-username" type="text" matInput [formControl]="username" [errorStateMatcher]="matcher"
+            placeholder="John doe">
+          <mat-error class="form-field-notification"
+            *ngIf="username.hasError('minlength') && !username.hasError('required')">
+            Minimum length <strong> 5 </strong>
+          </mat-error>
+          <mat-error class="form-field-notification" *ngIf="username.hasError('required')">
+            User name is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="form-field">
+          <mat-label>Password</mat-label>
+          <input class="form-field-password" type="password" matInput [formControl]="password"
+            [errorStateMatcher]="matcher">
+          <mat-error class="form-field-notification" *ngIf="password.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button class="btn login" type="submit" [disabled]=" !username.valid || !password.valid"> Log
+          in </button>
+      </form>
+    </div>
+  </div>
+</div>

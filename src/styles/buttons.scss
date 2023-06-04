@@ -1,0 +1,22 @@
+.btn {
+  &.login {
+    background: #fc0c05;
+    color: #fff;
+    font-weight: 600;
+
+    &:hover {
+      color: #fc0c05;
+      background: #fff;
+      box-shadow: 2px 4px 5px 0px #fc0c05;
+    }
+  }
+
+  &.dark {
+    background: #464646;
+    color: #fff;
+    &:hover {
+      background: #fff;
+      color: #464646;
+    }
+  }
+}
