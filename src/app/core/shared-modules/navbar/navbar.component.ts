@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent {
   constructor(private authService: AuthService, private router: Router) {}
 
-  logout() {
+  logout(): void {
     this.authService.userLogout();
   }
 }

@@ -29,11 +29,8 @@ export class LoginComponent {
     return this.authService.wrongData;
   }
 
-  loginIn(user: any, pass: any): void {
-    user = this.username.value;
-    pass = this.password.value;
-
-    this.authService.userLogin(user, pass);
+  loginIn(): void {
+    this.authService.userLogin(this.username.value, this.password.value);
   }
 }
 
