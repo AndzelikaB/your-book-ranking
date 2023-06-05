@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { AuthService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -29,15 +29,8 @@ export class LoginComponent {
     return this.authService.wrongData;
   }
 
-  ngOnInit() {
-    this.authService.userIsLogged = false;
-  }
-
-  loginIn(user: any, pass: any): void {
-    user = this.username.value;
-    pass = this.password.value;
-
-    this.authService.login(user, pass);
+  loginIn(): void {
+    this.authService.userLogin(this.username.value, this.password.value);
   }
 }
 

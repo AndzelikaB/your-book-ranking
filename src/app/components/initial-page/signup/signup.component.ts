@@ -7,7 +7,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { ErrorStateMatcher } from '@angular/material/core';
-import { AuthService } from 'src/app/services/auth-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -29,15 +29,15 @@ export class SignupComponent {
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit() {
-    this.authService.userIsLogged = false;
+    // this.authService.userIsLogged = false;
   }
 
-  signUp(user: any, email: any, pass: any): void {
-    email = this.email.value;
-    user = this.username.value;
-    pass = this.password.value;
-
-    this.authService.createUser(user, email, pass);
+  signUp(): void {
+    this.authService.createUser(
+      this.email.value,
+      this.username.value,
+      this.password.value
+    );
 
     this.username.reset();
     this.email.reset();

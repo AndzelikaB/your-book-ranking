@@ -45,6 +45,12 @@
       "username": "andzia",
       "email": "andzia@97.com",
       "password": "andzia"
+    },
+    {
+      "id": 9,
+      "username": "test@test",
+      "email": "test",
+      "password": "test"
     }
   ]
 }

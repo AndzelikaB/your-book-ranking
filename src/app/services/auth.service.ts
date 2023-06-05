@@ -6,13 +6,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  userIsLogged: boolean = false;
   wrongData: boolean = false;
   signSuccess: boolean = false;
 
+  get userIsLogged(): boolean {
+    const data: any = localStorage.getItem('userIsLogged');
+    const userIsLogged: boolean = JSON.parse(data);
+    return data ? userIsLogged : false;
+  }
+
   constructor(private router: Router, private http: HttpClient) {}
 
-  login(name: string, pass: string): void {
+  userLogin(name: any, pass: any): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const user: boolean = res.find((db: any) => {
@@ -23,8 +28,9 @@ export class AuthService {
 
         console.log(user);
         if (user) {
-          this.userIsLogged = true;
-          this.router.navigate(['home']);
+          localStorage.setItem('userIsLogged', JSON.stringify(true));
+
+          this.router.navigate(['/home']);
         } else {
           this.wrongData = true;
         }
@@ -51,6 +57,11 @@ export class AuthService {
         console.log(err);
       }
     );
+  }
+
+  userLogout(): void {
+    localStorage.setItem('userIsLogged', JSON.stringify(false));
+    this.router.navigate(['/login']);
   }
 }
 

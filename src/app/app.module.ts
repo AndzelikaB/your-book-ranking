@@ -13,7 +13,7 @@ import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
 } from '@angular/material/core';
-import { AuthService } from './services/auth-service.service';
+import { AuthService } from './services/auth.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/initial-page/signup/signup.component';
