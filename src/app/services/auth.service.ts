@@ -10,9 +10,9 @@ export class AuthService {
   signSuccess: boolean = false;
 
   get userIsLogged(): boolean {
-    const data: any = localStorage.getItem('userIsLogged');
-    const userIsLogged: boolean = JSON.parse(data);
-    return data ? userIsLogged : false;
+    const localStorageData: any = localStorage.getItem('userIsLogged');
+    const userIsLogged: boolean = JSON.parse(localStorageData);
+    return localStorageData ? userIsLogged : false;
   }
 
   constructor(private router: Router, private http: HttpClient) {}
@@ -20,16 +20,14 @@ export class AuthService {
   userLogin(name: any, pass: any): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
-        const user: boolean = res.find((db: any) => {
+        const userLogged: boolean = res.find((db: any) => {
           return (
             (db.username === name || db.email === name) && db.password === pass
           );
         });
 
-        console.log(user);
-        if (user) {
+        if (userLogged) {
           localStorage.setItem('userIsLogged', JSON.stringify(true));
-
           this.router.navigate(['/home']);
         } else {
           this.wrongData = true;
@@ -49,14 +47,19 @@ export class AuthService {
       password: pass,
     };
 
-    this.http.post('http://localhost:3000/signupUsersList', userData).subscribe(
-      (resp) => {
-        this.signSuccess = true;
-      },
-      (err) => {
-        console.log(err);
-      }
-    );
+    this.http
+      .post('http://localhost:3000/signupUsersList', userData)
+      .subscribe({
+        next: () => {
+          this.signSuccess = true;
+          setTimeout(() => {
+            this.signSuccess = false;
+          }, 5000);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
   }
 
   userLogout(): void {

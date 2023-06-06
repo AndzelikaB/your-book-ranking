@@ -26,11 +26,7 @@ export class SignupComponent {
 
   @ViewChild('signupNgForm') signupNgForm!: NgForm;
 
-  constructor(private router: Router, private authService: AuthService) {}
-
-  ngOnInit() {
-    // this.authService.userIsLogged = false;
-  }
+  constructor(private authService: AuthService) {}
 
   signUp(): void {
     this.authService.createUser(
@@ -52,11 +48,11 @@ export class SignupComponent {
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(
-    control: FormControl | null,
-    form: FormGroupDirective | NgForm | null
+    control: FormControl,
+    form: FormGroupDirective | NgForm
   ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(
+    return (
       control &&
       control.invalid &&
       (control.dirty || control.touched || isSubmitted)
