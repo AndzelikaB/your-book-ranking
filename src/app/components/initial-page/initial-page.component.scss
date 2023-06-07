@@ -33,6 +33,11 @@
     justify-content: space-evenly;
     width: 65%;
     margin: 0% 7%;
+    align-items: flex-end;
+
+    .registration {
+      align-items: center;
+    }
 
     &-inner-heading {
       margin-bottom: 30px;
@@ -42,6 +47,30 @@
       display: flex;
       justify-content: flex-end;
       width: 100%;
+    }
+  }
+}
+
+::ng-deep {
+  .mat-mdc-tab {
+    .mdc-tab__text-label {
+      line-height: 1.7;
+      font-size: 1.2rem;
+      font-family: "Eagle Lake", cursive;
+    }
+    &-header {
+      margin-bottom: 30px;
+      width: 100%;
+      background: #ffffff3b;
+      border-radius: 15px;
+    }
+  }
+  .mdc-tab-indicator {
+    display: none !important;
+
+    &--active {
+      background: $primary-color;
+      border-radius: 15px;
     }
   }
 }

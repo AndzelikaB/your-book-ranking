@@ -1,15 +1,45 @@
 .form {
   width: 300px;
   padding: 40px 50px;
-  background: #ffffff;
   border-radius: 15px;
-  color: #333;
   text-align: right;
+
+  &.login {
+    background: #ffffff;
+    color: #333;
+
+    .mat-mdc-raised-button[disabled] {
+      background: gray;
+      cursor: not-allowed;
+    }
+
+    .form-field-notification {
+      color: #d43333;
+    }
+  }
+
+  &.signup {
+    background: $primary-color;
+    color: #fff;
+    padding: 20px 50px;
+    text-align: center;
+
+    .mat-mdc-raised-button[disabled] {
+      background: rgb(232, 186, 186);
+      cursor: not-allowed;
+      color: gray;
+    }
+
+    ::placeholder,
+    .form-field-input {
+      color: #fff;
+    }
+  }
 
   &-wrong-data {
     text-align: center;
     display: block;
-    color: #fc0c05;
+    color: $primary-color;
   }
 
   &-field {
@@ -17,7 +47,6 @@
     width: 100%;
 
     &-notification {
-      color: #d43333;
       font-size: 0.8rem;
     }
 
@@ -30,10 +59,5 @@
         padding-top: 15px;
       }
     }
-  }
-
-  .mat-mdc-raised-button[disabled] {
-    background: gray;
-    cursor: not-allowed;
   }
 }

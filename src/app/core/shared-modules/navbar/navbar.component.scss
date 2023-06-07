@@ -1,8 +1,10 @@
+@import "src/styles/styles.scss";
+
 .navigation-bar {
   display: flex;
   justify-content: space-between;
   padding: 15px 50px;
-  background: #fc0c05;
+  background: $primary-color;
   color: #fff;
 
   &-logo {

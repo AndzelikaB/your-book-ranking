@@ -5,9 +5,7 @@
     font-weight: 600;
 
     &:hover {
-      color: #fc0c05;
-      background: #fff;
-      box-shadow: 2px 4px 5px 0px #fc0c05;
+      box-shadow: 2px 4px 5px 0px #ef433d;
     }
   }
 
@@ -17,6 +15,16 @@
     &:hover {
       background: #fff;
       color: #464646;
+    }
+  }
+
+  &.signup {
+    background: #fff;
+    color: #fc0c05;
+    font-weight: 600;
+
+    &:hover {
+      box-shadow: 2px 4px 5px 0px #333;
     }
   }
 }
