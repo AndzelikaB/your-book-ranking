@@ -21,6 +21,7 @@ import { InitialPageComponent } from './components/initial-page/initial-page.com
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TrendingSectionComponent } from './components/home/trending-section/trending-section.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotFoundComponent,
     SignupComponent,
     InitialPageComponent,
+    TrendingSectionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+{
+  "trendingBooks": [
+    {
+      "id": 1,
+      "title": "Langerd",
+      "cover": "Remigiusz Mróz",
+      "rating": "4.5",
+      "reviews": []
+    }
+  ]
+}
