@@ -1,0 +1,33 @@
+.container {
+  .section {
+    &-header,
+    &-body {
+      display: flex;
+    }
+    &-header {
+      justify-content: space-between;
+    }
+    &-body {
+      gap: 10px;
+
+      // .items-wrapper {
+      .single-item {
+        max-width: 200px;
+
+        .book {
+          &-cover {
+            width: 100%;
+            border-radius: 10px;
+          }
+          &-title {
+            font-weight: 500;
+            padding-top: 5px;
+          }
+          &-rating {
+          }
+        }
+      }
+      // }
+    }
+  }
+}
