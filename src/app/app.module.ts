@@ -21,7 +21,7 @@ import { InitialPageComponent } from './components/initial-page/initial-page.com
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TrendingSectionComponent } from './components/home/trending-section/trending-section.component';
+import { TrendingBooksComponent } from './components/home/trending-books/trending-books.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,7 @@ import { TrendingSectionComponent } from './components/home/trending-section/tre
     NotFoundComponent,
     SignupComponent,
     InitialPageComponent,
-    TrendingSectionComponent,
+    TrendingBooksComponent,
   ],
   imports: [
     BrowserModule,

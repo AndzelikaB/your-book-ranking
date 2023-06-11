@@ -4,7 +4,7 @@
     "title": "Langerd",
     "author": "Remigiusz Mróz",
     "rating": "4.5",
-    "cover": "/your-book-ranking/src/assets/images/covers/1020996-352x500.jpg",
+    "cover": "/assets/images/covers/1020996-352x500.jpg",
     "reviews": []
   },
   {
@@ -12,7 +12,7 @@
     "title": "Rodzina Monet. Skarb",
     "author": "Weronika Marczak",
     "rating": "3.8",
-    "cover": "",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
     "reviews": []
   },
   {

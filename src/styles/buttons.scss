@@ -1,4 +1,8 @@
 .btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+
   &.login {
     background: $primary-color;
     color: #fff;
@@ -26,5 +30,9 @@
     &:hover {
       box-shadow: 2px 4px 5px 0px #333;
     }
+  }
+  &.view-all {
+    font-weight: 600;
+    font-size: 1.1rem;
   }
 }
