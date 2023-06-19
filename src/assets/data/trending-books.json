@@ -20,7 +20,7 @@
     "title": "Co wyszeptał nam deszcz",
     "author": "Joanna Balicka",
     "rating": "4.4",
-    "cover": "",
+    "cover": "/assets/images/covers/1061179-352x500.jpg",
     "reviews": []
   },
   {
@@ -28,7 +28,7 @@
     "title": "Atlas. Historia Pa Salta",
     "author": "Lucinda Riley, Harry Whittaker",
     "rating": "4.9",
-    "cover": "",
+    "cover": "/assets/images/covers/1048158-352x500.jpg",
     "reviews": []
   },
   {
@@ -36,7 +36,7 @@
     "title": "Nemezis",
     "author": "Maciej Siembieda",
     "rating": "3.8",
-    "cover": "",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
     "reviews": []
   },
   {
@@ -44,7 +44,7 @@
     "title": "It Ends with Us",
     "author": "Colleen Hoover",
     "rating": "4.3",
-    "cover": "",
+    "cover": "/assets/images/covers/1045978-352x500.jpg",
     "reviews": []
   },
   {
@@ -52,7 +52,7 @@
     "title": "Zgłoba",
     "author": "Katarzyna Puzyńskaa",
     "rating": "3.3",
-    "cover": "",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
     "reviews": []
   },
   {
@@ -60,7 +60,7 @@
     "title": "For sure not you",
     "author": "Weronika Ancerowicz",
     "rating": "3.6",
-    "cover": "",
+    "cover": "/assets/images/covers/1062366-352x500.jpg",
     "reviews": []
   }
 ]

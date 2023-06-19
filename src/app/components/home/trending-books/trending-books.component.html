@@ -1,7 +1,7 @@
 <div class="container">
   <div class="section-header">
-    <h2> Trending movies </h2>
-    <button class="btn view-all" (click)="listBook()"> View All </button>
+    <h2> Trending books </h2>
+    <button routerLink="/trending-books" class="btn view-all"> View All </button>
   </div>
   <div class="section-body">
     <div class="single-item" *ngFor="let book of trendingBooks">

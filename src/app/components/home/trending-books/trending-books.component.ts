@@ -10,6 +10,10 @@ export class TrendingBooksComponent {
   trendingBooks: any;
   constructor(private http: HttpClient) {}
 
+  ngOnInit() {
+    this.listBook();
+  }
+
   listBook() {
     this.http
       .get('http://localhost:4200/assets/data/trending-books.json')
