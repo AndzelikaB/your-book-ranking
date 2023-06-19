@@ -1,0 +1,41 @@
+<form class="form signup" #signupNgForm="ngForm" (ngSubmit)="signUp(signupNgForm)">
+  <mat-hint class="form-signup-success" *ngIf="signSuccess"> Sign up successfully! </mat-hint>
+  <mat-form-field class="form-field">
+    <mat-label class="form-field-label">User Name</mat-label>
+    <input class="form-field-input form-field-username" type="text" matInput [formControl]="username"
+      [errorStateMatcher]="matcher" placeholder="John doe">
+    <mat-error class="form-field-notification" *ngIf="username.hasError('minlength') && !username.hasError('required')">
+      Minimum length <strong> 5 </strong>
+    </mat-error>
+    <mat-error class="form-field-notification" *ngIf="username.hasError('required')">
+      User name is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label class="form-field-label">E-mail</mat-label>
+    <input class="form-field-input form-field-email" type="email" matInput [formControl]="email"
+      [errorStateMatcher]="matcher" placeholder="john.doe@gmail.com">
+    <mat-error class="form-field-notification" *ngIf="email.hasError('email') && !email.hasError('required')">
+      Enter a valid e-mail
+    </mat-error>
+    <mat-error class="form-field-notification" *ngIf="email.hasError('required')">
+      E-mail is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="form-field">
+    <mat-label>Password</mat-label>
+    <input class="form-field-input form-field-password" type="password" matInput [formControl]="password"
+      [errorStateMatcher]="matcher">
+    <mat-error class="form-field-notification" *ngIf="password.hasError('required')">
+      Password is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <p class="member"> Already a member? <a class="member-login" href="#login"> <strong> Log In </strong></a></p>
+
+  <button mat-raised-button class="btn signup" type="submit"
+    [disabled]=" !username.valid || !password.valid || !email.valid"> Sign Up
+  </button>
+</form>

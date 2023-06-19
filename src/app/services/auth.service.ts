@@ -7,24 +7,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   wrongData: boolean = false;
+  signSuccess: boolean = false;
 
   get userIsLogged(): boolean {
-    const data: any = localStorage.getItem('userIsLogged');
-    const userIsLogged: boolean = JSON.parse(data);
-    return data ? userIsLogged : false;
+    const localStorageData: string = localStorage.getItem(
+      'userIsLogged'
+    ) as string;
+    const userIsLogged: boolean = JSON.parse(localStorageData);
+    return localStorageData ? userIsLogged : false;
   }
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  userLogin(name: any, pass: any): void {
+  userLogin(name: string, pass: string): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
-        const user: boolean = res.find((db: any) => {
-          return db.username === name && db.password === pass;
+        const userLogged: boolean = res.find((db: any) => {
+          return (
+            (db.username === name || db.email === name) && db.password === pass
+          );
         });
-        if (user) {
-          localStorage.setItem('userIsLogged', JSON.stringify(true));
 
+        if (userLogged) {
+          localStorage.setItem('userIsLogged', JSON.stringify(true));
           this.router.navigate(['/home']);
         } else {
           this.wrongData = true;
@@ -36,8 +41,38 @@ export class AuthService {
     });
   }
 
+  createUser(name: string, email: string, pass: string): void {
+    const userData: AuthData = {
+      id: '',
+      username: name,
+      email: email,
+      password: pass,
+    };
+
+    this.http
+      .post('http://localhost:3000/signupUsersList', userData)
+      .subscribe({
+        next: () => {
+          this.signSuccess = true;
+          setTimeout(() => {
+            this.signSuccess = false;
+          }, 5000);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
+
   userLogout(): void {
     localStorage.setItem('userIsLogged', JSON.stringify(false));
     this.router.navigate(['/login']);
   }
+}
+
+interface AuthData {
+  id: string;
+  username: string;
+  email: string;
+  password: string;
 }
