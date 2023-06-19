@@ -30,7 +30,10 @@ export class LoginComponent {
   }
 
   loginIn(): void {
-    this.authService.userLogin(this.username.value, this.password.value);
+    this.authService.userLogin(
+      this.username.value as string,
+      this.password.value as string
+    );
   }
 }
 
