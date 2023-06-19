@@ -10,14 +10,16 @@ export class AuthService {
   signSuccess: boolean = false;
 
   get userIsLogged(): boolean {
-    const localStorageData: any = localStorage.getItem('userIsLogged');
+    const localStorageData: string = localStorage.getItem(
+      'userIsLogged'
+    ) as string;
     const userIsLogged: boolean = JSON.parse(localStorageData);
     return localStorageData ? userIsLogged : false;
   }
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  userLogin(name: any, pass: any): void {
+  userLogin(name: string, pass: string): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const userLogged: boolean = res.find((db: any) => {
@@ -39,7 +41,7 @@ export class AuthService {
     });
   }
 
-  createUser(name: any, email: any, pass: any) {
+  createUser(name: string, email: string, pass: string): void {
     const userData: AuthData = {
       id: '',
       username: name,
