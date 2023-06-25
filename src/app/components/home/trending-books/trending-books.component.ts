@@ -1,25 +1,32 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { map, tap } from 'rxjs';
+import { BooksService } from 'src/app/services/books.service';
 
 @Component({
   selector: 'app-trending-books',
   templateUrl: './trending-books.component.html',
   styleUrls: ['./trending-books.component.scss'],
 })
-export class TrendingBooksComponent {
-  trendingBooks: any;
-  constructor(private http: HttpClient) {}
+export class TrendingBooksComponent implements OnInit {
+  dane: any[] | undefined;
+
+  constructor(private booksService: BooksService) {}
 
   ngOnInit() {
-    this.listBook();
+    this.getBooks();
   }
 
-  listBook() {
-    this.http
-      .get('http://localhost:4200/assets/data/trending-books.json')
-      .subscribe((books) => {
-        this.trendingBooks = books;
-        return this.trendingBooks;
-      });
+  getBooks() {
+    this.booksService.listOfTrendingBooks().subscribe((books) => {
+      this.dane = books;
+    });
+
+    // this.booksService.listOfTrendingBooks().pipe(
+    //   tap((books) => {
+    //     console.log(books);
+
+    //     this.dane = books;
+    //   })
+    // );
   }
 }
