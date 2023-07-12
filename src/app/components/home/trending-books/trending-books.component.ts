@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { map, tap } from 'rxjs';
-import { BooksService } from 'src/app/services/books.service';
+import { BooksService, TrendingBooks } from 'src/app/services/books.service';
 
 @Component({
   selector: 'app-trending-books',
@@ -8,7 +7,7 @@ import { BooksService } from 'src/app/services/books.service';
   styleUrls: ['./trending-books.component.scss'],
 })
 export class TrendingBooksComponent implements OnInit {
-  dane: any[] | undefined;
+  dane: TrendingBooks[] = [];
 
   constructor(private booksService: BooksService) {}
 
@@ -16,17 +15,9 @@ export class TrendingBooksComponent implements OnInit {
     this.getBooks();
   }
 
-  getBooks() {
+  private getBooks(): void {
     this.booksService.listOfTrendingBooks().subscribe((books) => {
       this.dane = books;
     });
-
-    // this.booksService.listOfTrendingBooks().pipe(
-    //   tap((books) => {
-    //     console.log(books);
-
-    //     this.dane = books;
-    //   })
-    // );
   }
 }

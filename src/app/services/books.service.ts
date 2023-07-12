@@ -8,19 +8,18 @@ import { Observable } from 'rxjs';
 export class BooksService {
   constructor(private http: HttpClient) {}
 
-  //To Do
-  listOfTrendingBooks(): Observable<any[]> {
-    return this.http.get<any[]>(
+  listOfTrendingBooks(): Observable<TrendingBooks[]> {
+    return this.http.get<TrendingBooks[]>(
       'http://localhost:4200/assets/data/trending-books.json'
     );
-
-    // this.http
-    //   .get('http://localhost:4200/assets/data/trending-books.json')
-    //   .subscribe((books) => {
-    //     let trendingBooks;
-    //     trendingBooks = books;
-    //     console.log(trendingBooks);
-    //     return trendingBooks;
-    //   });
   }
+}
+
+export interface TrendingBooks {
+  id: string;
+  title: string;
+  author: string;
+  rating: string;
+  cover: string;
+  reviews: string[];
 }
