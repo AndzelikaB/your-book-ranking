@@ -28,17 +28,17 @@ export class SignupComponent {
 
   constructor(private authService: AuthService) {}
 
-  signUp(): void {
+  public signUp(s: NgForm): void {
     this.authService.createUser(
-      this.email.value,
-      this.username.value,
-      this.password.value
+      this.username.value as string,
+      this.email.value as string,
+      this.password.value as string
     );
 
-    this.username.reset();
-    this.email.reset();
-    this.password.reset();
-    this.signupNgForm.resetForm();
+    // this.username.reset();
+    // this.email.reset();
+    // this.password.reset();
+    s.resetForm();
   }
 
   get signSuccess(): boolean {

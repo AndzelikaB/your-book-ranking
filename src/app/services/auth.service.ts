@@ -9,15 +9,17 @@ export class AuthService {
   wrongData: boolean = false;
   signSuccess: boolean = false;
 
+  constructor(private router: Router, private http: HttpClient) {}
+
   get userIsLogged(): boolean {
-    const localStorageData: any = localStorage.getItem('userIsLogged');
+    const localStorageData: string = localStorage.getItem(
+      'userIsLogged'
+    ) as string;
     const userIsLogged: boolean = JSON.parse(localStorageData);
     return localStorageData ? userIsLogged : false;
   }
 
-  constructor(private router: Router, private http: HttpClient) {}
-
-  userLogin(name: any, pass: any): void {
+  public userLogin(name: string, pass: string): void {
     this.http.get<any>('http://localhost:3000/signupUsersList').subscribe({
       next: (res) => {
         const userLogged: boolean = res.find((db: any) => {
@@ -39,7 +41,7 @@ export class AuthService {
     });
   }
 
-  createUser(name: any, email: any, pass: any) {
+  public createUser(name: string, email: string, pass: string): void {
     const userData: AuthData = {
       id: '',
       username: name,
@@ -62,7 +64,7 @@ export class AuthService {
       });
   }
 
-  userLogout(): void {
+  public userLogout(): void {
     localStorage.setItem('userIsLogged', JSON.stringify(false));
     this.router.navigate(['/login']);
   }

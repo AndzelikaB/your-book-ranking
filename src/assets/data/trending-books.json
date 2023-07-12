@@ -1,11 +1,66 @@
-{
-  "trendingBooks": [
-    {
-      "id": 1,
-      "title": "Langerd",
-      "cover": "Remigiusz Mróz",
-      "rating": "4.5",
-      "reviews": []
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "Langerd",
+    "author": "Remigiusz Mróz",
+    "rating": "4.5",
+    "cover": "/assets/images/covers/1020996-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 2,
+    "title": "Rodzina Monet. Skarb",
+    "author": "Weronika Marczak",
+    "rating": "3.8",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 3,
+    "title": "Co wyszeptał nam deszcz",
+    "author": "Joanna Balicka",
+    "rating": "4.4",
+    "cover": "/assets/images/covers/1061179-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 4,
+    "title": "Atlas. Historia Pa Salta",
+    "author": "Lucinda Riley, Harry Whittaker",
+    "rating": "4.9",
+    "cover": "/assets/images/covers/1048158-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 5,
+    "title": "Nemezis",
+    "author": "Maciej Siembieda",
+    "rating": "3.8",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 6,
+    "title": "It Ends with Us",
+    "author": "Colleen Hoover",
+    "rating": "4.3",
+    "cover": "/assets/images/covers/1045978-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 7,
+    "title": "Zgłoba",
+    "author": "Katarzyna Puzyńskaa",
+    "rating": "3.3",
+    "cover": "/assets/images/covers/1045632-352x500.jpg",
+    "reviews": []
+  },
+  {
+    "id": 8,
+    "title": "For sure not you",
+    "author": "Weronika Ancerowicz",
+    "rating": "3.6",
+    "cover": "/assets/images/covers/1062366-352x500.jpg",
+    "reviews": []
+  }
+]
