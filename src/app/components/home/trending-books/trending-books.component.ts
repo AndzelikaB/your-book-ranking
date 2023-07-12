@@ -7,7 +7,7 @@ import { BooksService, TrendingBooks } from 'src/app/services/books.service';
   styleUrls: ['./trending-books.component.scss'],
 })
 export class TrendingBooksComponent implements OnInit {
-  dane: TrendingBooks[] = [];
+  public dane: TrendingBooks[] = [];
 
   constructor(private booksService: BooksService) {}
 
