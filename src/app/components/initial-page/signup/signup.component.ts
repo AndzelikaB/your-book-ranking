@@ -28,7 +28,7 @@ export class SignupComponent {
 
   constructor(private authService: AuthService) {}
 
-  signUp(s: NgForm): void {
+  public signUp(s: NgForm): void {
     this.authService.createUser(
       this.username.value as string,
       this.email.value as string,

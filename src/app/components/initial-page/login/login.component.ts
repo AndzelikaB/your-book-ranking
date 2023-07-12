@@ -29,7 +29,7 @@ export class LoginComponent {
     return this.authService.wrongData;
   }
 
-  loginIn(): void {
+  public loginIn(): void {
     this.authService.userLogin(
       this.username.value as string,
       this.password.value as string

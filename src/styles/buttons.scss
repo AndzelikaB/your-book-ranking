@@ -1,11 +1,15 @@
 .btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+
   &.login {
-    background: #fc0c05;
+    background: $primary-color;
     color: #fff;
     font-weight: 600;
 
     &:hover {
-      box-shadow: 2px 4px 5px 0px #ef433d;
+      box-shadow: 2px 4px 5px 0px $primary-color;
     }
   }
 
@@ -20,11 +24,15 @@
 
   &.signup {
     background: #fff;
-    color: #fc0c05;
+    color: $primary-color;
     font-weight: 600;
 
     &:hover {
       box-shadow: 2px 4px 5px 0px #333;
     }
+  }
+  &.view-all {
+    font-weight: 600;
+    font-size: 1.1rem;
   }
 }
