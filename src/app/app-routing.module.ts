@@ -6,6 +6,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LoginGuard } from './core/guards/login.guard';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
 import { TrendingBooksComponent } from './components/home/trending-books/trending-books.component';
+import { SingleBook } from './components/home/single-book/single-book';
 
 const routes: Routes = [
   {
@@ -18,6 +19,11 @@ const routes: Routes = [
   {
     path: 'trending-books',
     component: TrendingBooksComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'single-book/:title',
+    component: SingleBook,
     canActivate: [AuthGuard],
   },
   { path: '404', component: NotFoundComponent },

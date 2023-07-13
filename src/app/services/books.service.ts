@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class BooksService {
   constructor(private http: HttpClient) {}
 
-  listOfTrendingBooks(): Observable<TrendingBooks[]> {
+  public fetchTrendingBooks(): Observable<TrendingBooks[]> {
     return this.http.get<TrendingBooks[]>(
       'http://localhost:4200/assets/data/trending-books.json'
     );

@@ -37,6 +37,10 @@ a {
   margin: 20px 50px;
 }
 
+.page-height {
+  height: Calc(100vh - 100px);
+}
+
 html,
 body {
   height: 100%;
