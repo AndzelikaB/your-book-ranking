@@ -3,6 +3,7 @@ import { TrendingBooksComponent } from '../trending-books/trending-books.compone
 import { BooksService, TrendingBooks } from 'src/app/services/books.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'single-boook',
@@ -10,10 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['single-book.scss'],
 })
 export class SingleBook {
-  public title: string | null = ''; //to do type
-  public author: string = '';
-  public rating: string = '';
-  allbooks: any[] = [];
+  //to do type
+  public currentBook: any;
 
   constructor(
     private booksService: BooksService,
@@ -21,26 +20,21 @@ export class SingleBook {
   ) {}
 
   ngOnInit(): void {
-    this.title = this.route.snapshot.paramMap.get('title');
-    console.log(this.title);
-
-    this.getBooks();
-    console.log(this.allbooks);
+    this.getCurrentBook();
   }
 
-  public searchBook(): void {
-    const findedBook = this.allbooks.find((item) => item.title === this.title);
-    this.author = findedBook.author;
-    this.rating = findedBook.rating;
-    console.log(findedBook, this.author);
-  }
+  public getCurrentBook(): void {
+    const title = this.route.snapshot.paramMap.get('title');
 
-  private getBooks(): void {
     this.booksService
       .fetchTrendingBooks()
-      .subscribe((booksObs: TrendingBooks[]) => {
-        this.allbooks = booksObs;
-        this.searchBook();
+      .pipe(
+        map((trendingBooks) =>
+          trendingBooks.find((item) => item.title === title)
+        )
+      )
+      .subscribe((booksObs) => {
+        this.currentBook = booksObs;
       });
   }
 }

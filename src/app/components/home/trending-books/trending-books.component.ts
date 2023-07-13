@@ -8,7 +8,7 @@ import { BooksService, TrendingBooks } from 'src/app/services/books.service';
   styleUrls: ['./trending-books.component.scss'],
 })
 export class TrendingBooksComponent implements OnInit, OnDestroy {
-  public books: TrendingBooks[] = [];
+  public books: any;
 
   //To do JAKI TYP???
   booksSub: any;
@@ -17,6 +17,8 @@ export class TrendingBooksComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.getBooks();
+    // this.booksService.fetchTrendingBooks();
+    // this.booksService.booksSubject$.subscribe((books) => (this.books = books));
   }
 
   ngOnDestroy(): void {
