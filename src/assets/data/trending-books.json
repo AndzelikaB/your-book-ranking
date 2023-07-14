@@ -5,7 +5,16 @@
     "author": "Remigiusz Mróz",
     "rating": "4.5",
     "cover": "/assets/images/covers/1020996-352x500.jpg",
-    "reviews": []
+    "reviews": [
+      {
+        "id": 0,
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam tenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?"
+      },
+      {
+        "id": 1,
+        "description": "Cenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?"
+      }
+  ]
   },
   {
     "id": 2,

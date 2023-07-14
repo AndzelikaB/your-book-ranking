@@ -5,7 +5,7 @@
   </div>
   <div class="section-body">
     <div class="single-item" *ngFor="let book of books">
-      <a [routerLink]="['/single-book', book.title]">
+      <a [routerLink]="['/single-book', encodeTitle(book.title)]">
         <img src="{{ book.cover }}" class="book-cover" alt="" />
         <div class="book-title">{{ book.title }}</div>
         <div class="book-rating">{{ book.rating }}</div>

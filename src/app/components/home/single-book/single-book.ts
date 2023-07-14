@@ -1,23 +1,27 @@
 import { Component } from '@angular/core';
 import { TrendingBooksComponent } from '../trending-books/trending-books.component';
 import { BooksService, TrendingBooks } from 'src/app/services/books.service';
-import { HttpClient } from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
+import { Destroy } from 'src/app/core/shared-modules/destroy.component';
+import { takeUntil } from 'rxjs/operators';
+
 
 @Component({
   selector: 'single-boook',
   templateUrl: 'single-book.html',
   styleUrls: ['single-book.scss'],
 })
-export class SingleBook {
+export class SingleBook extends Destroy {
   //to do type
   public currentBook: any;
 
   constructor(
     private booksService: BooksService,
     public route: ActivatedRoute
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit(): void {
     this.getCurrentBook();
@@ -25,16 +29,18 @@ export class SingleBook {
 
   public getCurrentBook(): void {
     const title = this.route.snapshot.paramMap.get('title');
+    const decodedTitle = decodeURIComponent(title!.replace(/-/g, '%20',));
 
     this.booksService
       .fetchTrendingBooks()
       .pipe(
         map((trendingBooks) =>
-          trendingBooks.find((item) => item.title === title)
-        )
+          trendingBooks.find((item) => item.title === decodedTitle)
+        ),
+        takeUntil(this.destroy$)
       )
-      .subscribe((booksObs) => {
-        this.currentBook = booksObs;
+      .subscribe((book) => {
+        this.currentBook = book;
       });
   }
 }
