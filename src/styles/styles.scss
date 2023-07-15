@@ -1,6 +1,8 @@
 @import "variables";
 @import "forms";
 @import "buttons";
+@import '~bootstrap/dist/css/bootstrap.css';
+
 
 body {
   font-family: "Arial", sans-serif;
@@ -9,8 +11,9 @@ body {
   margin: 0;
 }
 
-.containter {
-  height: 100vh;
+.container {
+  min-height: $min-page-height;
+  padding: 0 50px;
 }
 
 h1,
@@ -27,18 +30,13 @@ h1 {
   font-family: "Eagle Lake", cursive;
 }
 p {
-  font-family: "Arial", cursive;
 }
 
 a {
   text-decoration: none;
 }
 .grid {
-  margin: 20px 50px;
-}
-
-.page-height {
-  height: Calc(100vh - 100px);
+  display: flex;
 }
 
 html,
@@ -67,5 +65,12 @@ body {
         text-decoration: underline;
       }
     }
+  }
+}
+
+
+ul{
+  li{
+    list-style: none;
   }
 }

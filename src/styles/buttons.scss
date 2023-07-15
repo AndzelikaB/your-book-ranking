@@ -35,4 +35,11 @@
     font-weight: 600;
     font-size: 1.1rem;
   }
+
+  &.default{
+    background: $primary-color;
+    color: #fff;
+    padding: 13px 14px;
+    border-radius: 13px;
+  }
 }

@@ -23,7 +23,7 @@ export class LoginComponent {
   password = new FormControl('', [Validators.required]);
   matcher = new MyErrorStateMatcher();
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   get wrongData(): boolean {
     return this.authService.wrongData;

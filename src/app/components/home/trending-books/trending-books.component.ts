@@ -1,6 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Destroy } from 'src/app/core/shared-modules/destroy.component';
+import { Component, OnInit } from '@angular/core';
+import { Destroy } from 'src/app/core/shared/destroy.component';
 import { BooksService, TrendingBooks } from 'src/app/services/books.service';
 import { takeUntil } from 'rxjs/operators';
 
@@ -14,7 +13,6 @@ export class TrendingBooksComponent extends Destroy implements OnInit {
   //To do JAKI TYP???
   public books: any;
   //To do JAKI TYP???
-  booksSub: any;
 
   constructor(private booksService: BooksService) {
     super();
@@ -29,12 +27,11 @@ export class TrendingBooksComponent extends Destroy implements OnInit {
   }
 
   private getBooks(): void {
-    this.booksSub = this.booksService
+    this.booksService
       .fetchTrendingBooks()
       .pipe(takeUntil(this.destroy$))
       .subscribe((books: TrendingBooks[]) => {
         this.books = books;
       });
-
   }
 }

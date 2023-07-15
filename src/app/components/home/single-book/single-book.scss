@@ -1,0 +1,37 @@
+.container{
+  .details{
+    &-title{
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    &-author,
+    &-rating{
+        font-size: 1.5rem;
+    }
+
+    span{
+      font-weight: 500;
+    }
+  }
+
+  .reviews-section{
+    margin-top: 30px;
+
+    .details-reviews{
+      font-size: 1.8rem;
+    }
+    .reviews{
+      .review{
+        &-description{
+          font-style: italic;
+
+        }
+        &-date{
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+

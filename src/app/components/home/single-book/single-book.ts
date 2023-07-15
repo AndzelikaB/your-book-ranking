@@ -3,7 +3,7 @@ import { TrendingBooksComponent } from '../trending-books/trending-books.compone
 import { BooksService, TrendingBooks } from 'src/app/services/books.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
-import { Destroy } from 'src/app/core/shared-modules/destroy.component';
+import { Destroy } from 'src/app/core/shared/destroy.component';
 import { takeUntil } from 'rxjs/operators';
 
 
@@ -41,6 +41,10 @@ export class SingleBook extends Destroy {
       )
       .subscribe((book) => {
         this.currentBook = book;
+        let reviews = JSON.stringify(this.currentBook.reviews);
+        console.log(this.currentBook.reviews[0].description);
+        console.log(this.currentBook.reviews);
+
       });
   }
 }

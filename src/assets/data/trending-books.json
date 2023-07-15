@@ -8,13 +8,15 @@
     "reviews": [
       {
         "id": 0,
-        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam tenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?"
+        "description": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quisquam tenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?",
+        "date": "05.06.2015"
       },
       {
         "id": 1,
-        "description": "Cenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?"
+        "description": "Cenetur minima animi quo obcaecati aliquid reiciendis ad mollitia asperiores fugit dolor, provident unde excepturi totam expedita. Magni libero veritatis necessitatibus?",
+        "date": "05.06.2022"
       }
-  ]
+    ]
   },
   {
     "id": 2,

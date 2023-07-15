@@ -1,12 +1,33 @@
-<div class="page-height grid">
-  <div class="col-4">
-    <img src="{{currentBook?.cover}}" alt="" srcset="">
-  </div>
-  <div class="col-8">
-    <h4> Title: {{currentBook?.title}} </h4>
-    <h5> Author: {{currentBook?.author}}</h5>
-    <h5> Rating: {{currentBook?.rating}}</h5>
-    <h5> Reviews: {{currentBook?.reviews}}</h5>
+<div class="container d-flex justify-content-center flex-column">
+  <div class="row informations d-flex align-items-center">
+    <div class="col-5 informations-cover ">
+      <img src="{{currentBook?.cover}}" alt="book cover">
+    </div>
+    <div class="col-7 informations-content ">
+      <div class="details">
+        <h1 class="details-title"> Title: {{currentBook?.title}} </h1>
+        <p class="details-author"> <span>Author: </span> {{currentBook?.author}}</p>
+        <p class="details-rating"> <span>Rating:</span> {{currentBook?.rating}}</p>
 
+        <button class="btn default">Rate book</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="row reviews-section">
+    <p class="details-reviews"> <span>Reviews:</span></p>
+    <ul class="reviews">
+      <li class="review" *ngFor="let review of currentBook?.reviews">
+        <div class="review-description">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="reviews"></mat-icon>
+          <p> {{ review.description }} </p>
+        </div>
+
+        <div class="review-date">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="calendar_month"></mat-icon>
+          {{ review.date }}
+        </div>
+      </li>
+    </ul>
   </div>
 </div>
