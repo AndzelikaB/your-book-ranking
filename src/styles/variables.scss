@@ -10,4 +10,4 @@ $text-color-light: #fff;
 $header-height: 78px;
 $footer-height: 44px;
 
-$min-page-height: calc( 100vh - ($header-height + $footer-height));
+$min-page-height: calc( 100vh - ($header-height + $footer-height - 50px));
