@@ -19,7 +19,8 @@ import { TrendingBooksComponent } from './components/home/trending-books/trendin
 import { MaterialModule } from './core/shared/material.module';
 import { LoginComponent } from './components/initial-page/login/login.component';
 import { SingleBook } from './components/home/single-book/single-book';
-import { RatingBook } from './components/home/single-book/rating-book/rating-book.component';
+import { ReviewComponent } from './components/home/single-book/review-book/review-book.component';
+import { RatingComponent } from './components/home/single-book/rating-book/rating.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RatingBook } from './components/home/single-book/rating-book/rating-boo
     TrendingBooksComponent,
     LoginComponent,
     SingleBook,
-    RatingBook
+    ReviewComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +44,7 @@ import { RatingBook } from './components/home/single-book/rating-book/rating-boo
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [
     ErrorStateMatcher,
