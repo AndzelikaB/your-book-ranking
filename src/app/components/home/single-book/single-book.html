@@ -1,0 +1,40 @@
+<div class="container d-flex justify-content-center flex-column">
+  <div class="row informations d-flex align-items-center">
+    <div class="col-auto informations-cover ">
+      <img src="{{currentBook?.cover}}" alt="book cover">
+      <button class="btn favorite">
+        <mat-icon fontIcon="favorite" class="favorite-icon"></mat-icon>
+      </button>
+    </div>
+
+
+    <div class="col-8 informations-content ">
+      <div class="details">
+        <h1 class="details-title"> Title: {{currentBook?.title}} </h1>
+        <p class="details-author"> <span>Author: </span> {{currentBook?.author}}</p>
+        <p class="details-rating"> <span>Rating:</span> {{currentBook?.rating}}</p>
+
+        <button class="btn default rate d-flex align-items-center">
+          <mat-icon fontIcon="star_rate" class="rate-icon"></mat-icon>
+          <span> Rate this book </span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="currentBook?.reviews.length > 0" class="row reviews-section">
+    <p class="review-header"> <span>Reviews:</span></p>
+    <ul class="reviews">
+      <li class="review" *ngFor="let review of currentBook?.reviews">
+        <div class="review-description d-flex">
+          <mat-icon fontIcon="reviews" class="review-description-icon"></mat-icon>
+          <p class="review-description-content"> {{ review.description }} </p>
+        </div>
+
+        <div class="review-date d-flex justify-content-end">
+          <mat-icon fontIcon="calendar_month" class="review-date-icon"></mat-icon>
+          <p class="review-data-content">{{ review.date }} </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

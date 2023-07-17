@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -8,11 +8,23 @@ import { Observable } from 'rxjs';
 export class BooksService {
   constructor(private http: HttpClient) {}
 
-  listOfTrendingBooks(): Observable<TrendingBooks[]> {
+  // public booksSubject$ = new Subject<TrendingBooks[]>();
+
+  public fetchTrendingBooks(): Observable<TrendingBooks[]> {
     return this.http.get<TrendingBooks[]>(
       'http://localhost:4200/assets/data/trending-books.json'
     );
   }
+
+  // public fetchTrendingBooks(): void {
+  //   this.http
+  //     .get<TrendingBooks[]>(
+  //       'http://localhost:4200/assets/data/trending-books.json'
+  //     )
+  //     .subscribe((response) => {
+  //       this.booksSubject$.next(response);
+  //     });
+  // }
 }
 
 export interface TrendingBooks {

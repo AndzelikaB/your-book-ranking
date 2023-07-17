@@ -5,3 +5,9 @@ $primary-color: #815e55;
 $secondary-color: rgb(0, 7, 142);
 $text-color-dark: #333;
 $text-color-light: #fff;
+
+
+$header-height: 78px;
+$footer-height: 44px;
+
+$min-page-height: calc( 100vh - ($header-height + $footer-height - 50px));

@@ -2,13 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/initial-page/login/login.component';
 import { HomeComponent } from './components/home/home.component';
-import { SharedModule } from './core/shared-modules/shared.module';
+import { SharedModule } from './core/shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 import {
   ErrorStateMatcher,
   ShowOnDirtyErrorStateMatcher,
@@ -18,20 +14,24 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { SignupComponent } from './components/initial-page/signup/signup.component';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrendingBooksComponent } from './components/home/trending-books/trending-books.component';
+import { MaterialModule } from './core/shared/material.module';
+import { LoginComponent } from './components/initial-page/login/login.component';
+import { SingleBook } from './components/home/single-book/single-book';
+import { RatingBook } from './components/home/single-book/rating-book/rating-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     HomeComponent,
     NotFoundComponent,
     SignupComponent,
     InitialPageComponent,
     TrendingBooksComponent,
+    LoginComponent,
+    SingleBook,
+    RatingBook
   ],
   imports: [
     BrowserModule,
@@ -39,14 +39,10 @@ import { TrendingBooksComponent } from './components/home/trending-books/trendin
     AppRoutingModule,
     SharedModule,
     FormsModule,
-    MatSlideToggleModule,
-    MatInputModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatToolbarModule,
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [
     ErrorStateMatcher,
@@ -54,6 +50,8 @@ import { TrendingBooksComponent } from './components/home/trending-books/trendin
     AuthService,
     HttpClient,
   ],
+  exports: [
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

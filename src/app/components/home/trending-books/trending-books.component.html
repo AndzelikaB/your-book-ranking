@@ -1,13 +1,15 @@
-<div class="container grid">
+<div class="container">
   <div class="section-header">
-    <h2> Trending books </h2>
-    <button routerLink="/trending-books" class="btn view-all"> View All </button>
+    <h2>Trending books</h2>
+    <button routerLink="/trending-books" class="btn view-all">View All</button>
   </div>
   <div class="section-body">
-    <div class="single-item" *ngFor="let book of dane">
-      <img src="{{book.cover }}" class="book-cover" alt="">
-      <div class="book-title"> {{book.title}} </div>
-      <div class="book-rating"> {{book.rating}} </div>
+    <div class="single-item" *ngFor="let book of books">
+      <a [routerLink]="['/single-book', encodeTitle(book.title)]">
+        <img src="{{ book.cover }}" class="book-cover" alt="" />
+        <div class="book-title">{{ book.title }}</div>
+        <div class="book-rating">{{ book.rating }}</div>
+      </a>
     </div>
   </div>
 </div>
