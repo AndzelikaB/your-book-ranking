@@ -6,7 +6,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LoginGuard } from './core/guards/login.guard';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
 import { TrendingBooksComponent } from './components/home/trending-books/trending-books.component';
-import { SingleBook } from './components/home/single-book/single-book';
+import { SingleBook } from './components/home/single-book/single-book.component.';
 
 const routes: Routes = [
   {
@@ -34,4 +34,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

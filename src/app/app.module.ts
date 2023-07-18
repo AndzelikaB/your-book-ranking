@@ -18,8 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TrendingBooksComponent } from './components/home/trending-books/trending-books.component';
 import { MaterialModule } from './core/shared/material.module';
 import { LoginComponent } from './components/initial-page/login/login.component';
-import { SingleBook } from './components/home/single-book/single-book';
-import { ReviewComponent } from './components/home/single-book/review-book/review-book.component';
+import { SingleBook } from './components/home/single-book/single-book.component.';
 import { RatingComponent } from './components/home/single-book/rating-book/rating.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { RatingComponent } from './components/home/single-book/rating-book/ratin
     TrendingBooksComponent,
     LoginComponent,
     SingleBook,
-    ReviewComponent,
     RatingComponent
   ],
   imports: [

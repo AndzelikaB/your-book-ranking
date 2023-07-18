@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, Optional } from '@angular/core';
 import { TrendingBooksComponent } from '../trending-books/trending-books.component';
 import { BooksService, TrendingBooks } from 'src/app/services/books.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs';
 import { Destroy } from 'src/app/core/shared/destroy.component';
 import { takeUntil } from 'rxjs/operators';
+import { MatDialog, MatDialogRef, MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { ReviewComponent } from './review-book/review-book.component';
 
 
 @Component({
   selector: 'single-boook',
-  templateUrl: 'single-book.html',
-  styleUrls: ['single-book.scss'],
+  templateUrl: 'single-book.component.html',
+  styleUrls: ['single-book.component.scss'],
 })
 export class SingleBook extends Destroy {
   //to do type
@@ -18,7 +21,10 @@ export class SingleBook extends Destroy {
 
   constructor(
     private booksService: BooksService,
-    public route: ActivatedRoute
+    public route: ActivatedRoute,
+    public dialog: MatDialog,
+    @Optional() public dialogRef: MatDialogRef<ReviewComponent>
+
   ) {
     super();
   }
@@ -46,5 +52,17 @@ export class SingleBook extends Destroy {
         console.log(this.currentBook.reviews);
 
       });
+  }
+
+  public onAddReview() {
+    console.log("onAddReview");
+  }
+
+  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(ReviewComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 }
