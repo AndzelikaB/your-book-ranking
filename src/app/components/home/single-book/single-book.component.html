@@ -16,13 +16,11 @@
 
         <rating-book> </rating-book>
 
-        <button class="btn default rate d-flex align-items-center" (click)="onAddReview()">
+        <button mat-raised-button class="btn default rate d-flex align-items-center"
+          (click)="onAddReview('300ms', '200ms')">
           <mat-icon class="rate-icon"> reviews</mat-icon>
           <span> Add review </span>
         </button>
-
-        <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog without animation</button>
-        <button mat-raised-button (click)="openDialog('3000ms', '1500ms')">Open dialog slowly</button>
 
       </div>
     </div>

@@ -54,13 +54,10 @@ export class SingleBook extends Destroy {
       });
   }
 
-  public onAddReview() {
-    console.log("onAddReview");
-  }
-
-  openDialog(enterAnimationDuration: string, exitAnimationDuration: string): void {
+  public onAddReview(enterAnimationDuration: string, exitAnimationDuration: string): void {
     this.dialog.open(ReviewComponent, {
-      width: '250px',
+      width: '850px',
+      height: '80vh',
       enterAnimationDuration,
       exitAnimationDuration,
     });

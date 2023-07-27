@@ -20,6 +20,7 @@ import { MaterialModule } from './core/shared/material.module';
 import { LoginComponent } from './components/initial-page/login/login.component';
 import { SingleBook } from './components/home/single-book/single-book.component.';
 import { RatingComponent } from './components/home/single-book/rating-book/rating.component';
+import { ReviewComponent } from './components/home/single-book/review-book/review-book.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { RatingComponent } from './components/home/single-book/rating-book/ratin
     TrendingBooksComponent,
     LoginComponent,
     SingleBook,
-    RatingComponent
+    RatingComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,
