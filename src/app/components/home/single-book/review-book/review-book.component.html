@@ -1,26 +1,26 @@
 <h1 mat-dialog-title>Add Review: </h1>
 <div mat-dialog-content>
   <form>
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field" appearance="outline">
       <mat-label class="form-field-label">Book Title</mat-label>
       <input class="form-field-input form-field-username" type="text" matInput [formControl]="title"
         placeholder="John doe">
     </mat-form-field>
 
-    <mat-form-field class="form-field">
+    <mat-form-field class="form-field" appearance="outline">
       <mat-label class="form-field-label">Book Author</mat-label>
       <input class="form-field-input form-field-username" type="text" matInput [formControl]="title"
         placeholder="John doe">
     </mat-form-field>
 
-    <mat-form-field class="form-field">
-      <mat-label class="form-field-label">Review</mat-label>
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label class=" form-field-label">Review</mat-label>
       <textarea class="form-field-input form-field-username" type="text" matInput [formControl]="title"
         placeholder="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique aspernatur sequi neque rerum cumque culpa laudantium!        "> </textarea>
     </mat-form-field>
   </form>
 </div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Add Review</button>
-  <!-- <button mat-button mat-dialog-close cdkFocusInitial>Ok</button> -->
+<div mat-dialog-actions class="actions-btn justify-content-end">
+  <button mat-dialog-close cdkFocusInitial class="btn default dark">Add Review</button>
+  <button mat-button mat-dialog-close class="btn default bright">Close</button>
 </div>
