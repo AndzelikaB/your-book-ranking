@@ -16,7 +16,7 @@
 
         <rating-book> </rating-book>
 
-        <button mat-raised-button class="btn default rate d-flex align-items-center"
+        <button mat-raised-button class="btn default dark rate d-flex align-items-center"
           (click)="onAddReview('300ms', '200ms')">
           <mat-icon class="rate-icon"> reviews</mat-icon>
           <span> Add review </span>
@@ -42,3 +42,7 @@
     </ul>
   </div>
 </div>
+<review-book></review-book>
+
+
+<!-- <review-book (descriptionEmit)="addItem($event)"> description: {{newReviewDesc }}</review-book> -->

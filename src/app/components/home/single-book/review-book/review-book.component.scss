@@ -1,8 +1,22 @@
-.actions-btn{}
+@import "src/styles/variables.scss";
+
+.container-review{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 20px;
+}
 
 .mat-mdc-dialog-title{
   font-size: 2rem;
   color: #333;
   margin-top: 30px;
   font-weight: 500;
+}
+
+.form-field-input{
+  line-height: normal;
+  padding: 0;
+  color: red;
 }

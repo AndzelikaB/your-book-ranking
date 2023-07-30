@@ -15,13 +15,13 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  username = new FormControl('', [
+  public username = new FormControl('', [
     Validators.required,
     Validators.minLength(4),
   ]);
 
-  password = new FormControl('', [Validators.required]);
-  matcher = new MyErrorStateMatcher();
+  public password = new FormControl('', [Validators.required]);
+  public matcher = new MyErrorStateMatcher();
 
   constructor(private router: Router, private authService: AuthService) { }
 

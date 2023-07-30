@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, EventEmitter, Output } from "@angular/core";
+import { FormControl } from "@angular/forms";
 import { MatDialogRef } from "@angular/material/dialog";
 
 @Component({
@@ -7,9 +8,17 @@ import { MatDialogRef } from "@angular/material/dialog";
   styleUrls: ['review-book.component.scss']
 })
 export class ReviewComponent {
-  public title: any;
+  @Output() descriptionEmit = new EventEmitter<any>();
+  public currentDate: Date = new Date();
+  public date = new FormControl('');
+  public description = new FormControl('');
 
   constructor(public dialogRef: MatDialogRef<ReviewComponent>) { }
 
+  public onAddReview(date: any, des: any) {
+    this.descriptionEmit.emit(des.value);
 
+    this.descriptionEmit = des.value
+    console.log("add review: " + this.descriptionEmit + date.value)
+  }
 }

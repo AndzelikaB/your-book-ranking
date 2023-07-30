@@ -18,6 +18,7 @@ import { ReviewComponent } from './review-book/review-book.component';
 export class SingleBook extends Destroy {
   //to do type
   public currentBook: any;
+  public newReviewDesc: any = 'test';
 
   constructor(
     private booksService: BooksService,
@@ -31,6 +32,10 @@ export class SingleBook extends Destroy {
 
   ngOnInit(): void {
     this.getCurrentBook();
+  }
+
+  addItem(newItem: any) {
+    this.newReviewDesc = newItem;
   }
 
   public getCurrentBook(): void {
@@ -50,7 +55,6 @@ export class SingleBook extends Destroy {
         let reviews = JSON.stringify(this.currentBook.reviews);
         console.log(this.currentBook.reviews[0].description);
         console.log(this.currentBook.reviews);
-
       });
   }
 

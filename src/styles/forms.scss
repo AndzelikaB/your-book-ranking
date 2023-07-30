@@ -46,6 +46,12 @@
     margin: 10px 0;
     width: 100%;
 
+    &-input{
+      line-height: normal;
+      padding: 0;
+    }
+
+
     &-notification {
       font-size: 0.8rem;
     }
@@ -61,3 +67,4 @@
     }
   }
 }
+
