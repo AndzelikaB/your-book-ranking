@@ -6,13 +6,13 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
   providedIn: 'root',
 })
 export class BooksService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   // public booksSubject$ = new Subject<TrendingBooks[]>();
 
   public fetchTrendingBooks(): Observable<TrendingBooks[]> {
     return this.http.get<TrendingBooks[]>(
-      'http://localhost:4200/assets/data/trending-books.json'
+      'http://localhost:3000/trendingBooks'
     );
   }
 

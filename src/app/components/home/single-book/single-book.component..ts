@@ -53,8 +53,6 @@ export class SingleBook extends Destroy {
       .subscribe((book) => {
         this.currentBook = book;
         let reviews = JSON.stringify(this.currentBook.reviews);
-        console.log(this.currentBook.reviews[0].description);
-        console.log(this.currentBook.reviews);
       });
   }
 
